@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{css/index.css}">
+
+    <title>Home</title>
+</head>
+
+<body>
+<header>
+    <div class="header-container">
+        <div class="header-line-up">
+            <div class="header-line-up-left">
+                <p>Siguenos</p>
+                <img th:src="@{img/icons/ico_twiter.svg}">
+                <img th:src="@{img/icons/ico_insta.svg}">
+                <img th:src="@{img/icons/ico_fb.svg}">
+
+            </div>
+            <div class="header-line-up-right">
+                <a th:href="@{/carrito}">
+                    <p>Carrito</p>
+                </a>
+                <img th:src="@{img/icons/ico-carrito.png}">
+            </div>
+        </div>
+        <hr>
+        <div class="header-body">
+            <div class="header-banner-navbar">
+                <div class="header-banner-navbar-left">
+                    <img src="img/icons/logo.png">
+                    <a th:href="@{/}">
+                        <p>Inicio</p>
+                    </a>
+                    <a th:href="@{/menu}">
+                        <p>Menu</p>
+                    </a>
+                </div>
+                <div class="header-banner-navbar-right">
+                    <img src="img/icons/ico_user.svg">
+                    <div sec:authorize="isAnonymous()">
+                        <a th:href="@{/login}">
+                            <p>Iniciar sesion </p>
+                        </a>
+                    </div>
+                    <div sec:authorize="!isAnonymous()">
+                        <form th:action="@{/logout}" method="post">
+                            <input type="submit" value="Cerrar Sesion"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="header-banner">
+                <div class="header-banner-text">
+                    <p class="header-banner-title">¡Deliciosas pizzas, un bocado de felicidad!</p>
+                    <p>Bienvenido a nuestro acogedor rincón de pizzas! En nuestro sitio, te invitamos a descubrir una
+                        deliciosa selección de sabores y combinaciones irresistibles. Cada pizza está cuidadosamente
+                        elaborada con ingredientes frescos y de la más alta calidad, fusionando tradición y creatividad
+                        en cada bocado.
+                        Sumérgete en nuestra amplia variedad de pizzas clásicas y especialidades únicas, todas ellas
+                        cocinadas con pasión y atención al detalle. Nuestro objetivo es brindarte una experiencia
+                        gastronómica memorable que satisfaga todos tus antojos.</p>
+
+                </div>
+                <img src="img/burger-banner-draw.png">
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container-body-par">
+
+    <div class="container-body-index">
+
+        <div class="body-index">
+            <img src="img/food/burger.jpg">
+            <h1 class="title">Hamburguesa doble carne</h1>
+            <p>Deléitate con nuestra hamburguesa de carne jugosa y sabrosa. Preparada con ingredientes frescos y de alta
+                calidad, esta hamburguesa es el deleite de los amantes de la carne. Con cada bocado, disfrutarás de la
+                combinación perfecta de sabores y texturas, que te harán volver por más.</p>
+        </div>
+        <div class="body-index">
+            <img src="img/food/pizza.jpg">
+            <h1 class="title">Pizza de pepperoni</h1>
+            <p>Nuestra pizza vegetariana es una explosión de sabores frescos y saludables. Con una base de masa
+                crujiente y salsa de tomate casera, esta pizza está repleta de verduras frescas, como pimientos,
+                champiñones, cebolla y más. Cada mordisco es una experiencia llena de sabor y una opción perfecta para
+                aquellos que prefieren una alternativa vegetariana.</p>
+        </div>
+        <div class="body-index">
+            <img src="img/food/ensalada.jpg">
+            <h1 class="title">Ensalada Vegana X1</h1>
+            <p>Nuestra ensalada vegana es una combinación refrescante y nutritiva de ingredientes frescos y coloridos.
+                Con una variedad de verduras de temporada, acompañadas de aderezos y aliños veganos, esta ensalada es
+                una opción saludable y deliciosa para aquellos que buscan una comida ligera y llena de nutrientes.</p>
+        </div>
+    </div>
+    <div class="container-gallery">
+        <div class="container-gallery-title">
+            <p>Galeria de arte</p>
+        </div>
+        <div class="container-gallery-child">
+            <div class="gallery-card">
+                <img src="img/food/pizza.jpg" alt="">
+
+            </div>
+            <div class="gallery-card">
+                <img src="https://images.unsplash.com/photo-1573515312330-f0b1df7e3d62?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80"
+                     alt="">
+            </div>
+            <div class="gallery-card">
+                <img src="https://images.unsplash.com/photo-1567233359498-a8e5b5ceed7e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
+                     alt="">
+            </div>
+            <div class="gallery-card">
+                <img src="https://images.unsplash.com/photo-1653964158593-716a5a01de7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
+                     alt="">
+            </div>
+            <div class="gallery-card">
+                <img src="https://images.unsplash.com/photo-1631572844996-17ad95563270?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80"
+                     alt="">
+            </div>
+        </div>
+    </div>
+    <div class="container-body-aboutus">
+        <div class="body-aboutus">
+            <h1 class="title">ACERCA DE PIZZAZIP</h1>
+            <p>En PizzaZip, somos apasionados por crear las mejores pizzas que puedas probar. Nuestro equipo está
+                compuesto por expertos artesanos de la pizza, comprometidos en brindarte una experiencia gastronómica
+                única.
+<br>
+                Utilizamos ingredientes frescos y de alta calidad para garantizar sabores excepcionales en cada uno de
+                nuestros productos. Desde la masa crujiente y bien sazonada hasta las combinaciones de ingredientes
+                cuidadosamente seleccionados, cada pizza es una obra maestra culinaria.
+<br>
+                Nos enorgullece ofrecerte un ambiente acogedor y amigable, donde puedas disfrutar de momentos memorables
+                junto a tus seres queridos. Ya sea que prefieras visitarnos en nuestro local o solicitar una entrega a
+                domicilio, nuestro objetivo es brindarte un servicio excepcional y hacerte sentir como en casa.
+<br>
+                Además de nuestras pizzas clásicas y creativas, también contamos con opciones vegetarianas y sin gluten,
+                para satisfacer las necesidades de todos nuestros clientes. Nos esforzamos por ser inclusivos y
+                garantizar que todos puedan disfrutar de nuestras delicias.
+
+               </p>
+        </div>
+        <div class="body-aboutus">
+            <img src="img/aboutus.jpg">
+        </div>
+    </div>
+    <div class="container-contact">
+        <div class="container-contact-child">
+            <div class="container-contact-info">
+
+                <h1 class="title">INFORMACIÓN DE CONTACTO</h1>
+
+                <div class="contact-item">
+                    <div>
+                        <p>Calle 10 y 11 Sector Quinta Veléz</p>
+                        <P>605-1234567</P>
+                    </div>
+                    <div>
+                        <p>pizzazip@outlook.com</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="container-horario">
+                <div class="container-horario-child">
+                    <p>HORARIO DE APERTURA</p>
+                    <ul>
+                        <li>Lunes .................... 8:00 - 20:00</li>
+                        <li>Martes .................... 8:00 - 20:00</li>
+                        <li>Miercoles .................... 8:00 - 20:00</li>
+                        <li>Jueves .................... 8:00 - 20:00</li>
+                        <li>Viernes .................... 8:00 - 18:00</li>
+                        <li>Sabado .................... 14:00 - 20:00</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="container-footer">
+        <div class="container-footer-child">
+            <div class="footer-item">
+                <img src="img/icons/logo.png">
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti, totam corporis ullam
+                </p>
+                <div class="footer-container-list">
+                    <div class="footer-list">
+                        <img src="img/icons/mail.png" alt="">
+                        <p>pizzazip@outlook.com</p>
+                    </div>
+                    <div class="footer-list">
+                        <img src="img/icons/phone.png" alt="">
+                        <p>605-1234567</p>
+                    </div>
+                    <div class="footer-list">
+                        <img src="img/icons/location.png" alt="">
+                        <p>Calle 10 y 11 Sector Quinta Veléz</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-item">
+                <h1 class="title">Instagram</h1>
+                <a href=""></a>
+            </div>
+            <div class="footer-item">
+                <h1 class="title">Facebook</h1>
+                <a href=""></a>
+            </div>
+
+        </div>
+        <div class="footer-copy">
+            <hr>
+            <p> © 2021. Déchets productions, All Rights Reserved</p>
+        </div>
+    </div>
+</footer>
+</body>
+
+</html>
